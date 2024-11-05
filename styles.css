@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.total-count {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.date-filter {
+    display: flex;
+    gap: 10px;
+    flex: 2;
+}
+
+.date-filter input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.region-btn {
+    padding: 12px 8px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* 为每个按钮设置不同的背景色 */
+.region-btn[data-region="蒙F"] { background-color: #2196F3; }
+.region-btn[data-region="内蒙地区"] { background-color: #1976D2; }
+.region-btn[data-region="黑"] { background-color: #4CAF50; }
+.region-btn[data-region="吉"] { background-color: #8BC34A; }
+.region-btn[data-region="辽"] { background-color: #FFC107; }
+.region-btn[data-region="京"] { background-color: #FF5722; }
+.region-btn[data-region="津"] { background-color: #9C27B0; }
+.region-btn[data-region="冀"] { background-color: #3F51B5; }
+.region-btn[data-region="其他地区"] { background-color: #795548; }
+
+.region-btn:hover {
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.charts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chart-wrapper {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-height: 300px; /* 确保图表有足够的显示空间 */
+}
+
+@media (min-width: 768px) {
+    .charts-container {
+        flex-direction: row;
+    }
+    
+    .chart-wrapper {
+        flex: 1;
+    }
+}
+
+/* 添加新的样式 */
+.control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.export-btns {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.control-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    opacity: 0.8;
+}
+
+.control-btn.reset {
+    background-color: #f44336;
+}
+
+#exportBtn {
+    background-color: #4CAF50;
+}
+
+/* 添加移动端特定的样式优化 */
+@media (max-width: 768px) {
+    .control-panel {
+        flex-direction: column;
+    }
+    
+    .date-filter {
+        flex-direction: column;
+    }
+    
+    .export-btns {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .control-btn {
+        width: 48%; /* 让按钮在移动端占据合适的宽度 */
+        padding: 12px 8px; /* 增加按钮的可点击区域 */
+    }
+    
+    .button-group {
+        grid-template-columns: repeat(3, 1fr); /* 移动端每行显示3个按钮 */
+    }
+    
+    .region-btn {
+        padding: 15px 8px; /* 增加按钮的可点击区域 */
+        font-size: 16px; /* 增大字体大小 */
+    }
+    
+    .total-count {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    
+    .chart-wrapper {
+        min-height: 250px; /* 调整图表高度适应移动端 */
+        margin-bottom: 20px;
+    }
+}
+
+/* 添加触摸设备的优化 */
+@media (hover: none) {
+    .region-btn:active {
+        opacity: 0.7;
+    }
+    
+    .control-btn:active {
+        opacity: 0.7;
+    }
+} 

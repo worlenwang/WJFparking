@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>车牌数据统计</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 引入Chart.js库用于绘制图表 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 总数统计区域 -->
+        <div class="total-count">
+            <span>总数:</span>
+            <span id="totalCount">0</span>
+        </div>
+
+        <!-- 日期筛选和导出区域 -->
+        <div class="control-panel">
+            <div class="date-filter">
+                <input type="date" id="startDate" placeholder="开始日期">
+                <input type="date" id="endDate" placeholder="结束日期">
+                <button id="searchBtn" class="control-btn">查询</button>
+            </div>
+            <div class="export-btns">
+                <button id="exportBtn" class="control-btn">导出数据</button>
+                <button id="resetBtn" class="control-btn reset">重置数据</button>
+            </div>
+        </div>
+
+        <!-- 按钮区域 -->
+        <div class="button-group">
+            <button class="region-btn" data-region="蒙F">蒙F</button>
+            <button class="region-btn" data-region="内蒙地区">内蒙地区</button>
+            <button class="region-btn" data-region="黑">黑</button>
+            <button class="region-btn" data-region="吉">吉</button>
+            <button class="region-btn" data-region="辽">辽</button>
+            <button class="region-btn" data-region="京">京</button>
+            <button class="region-btn" data-region="津">津</button>
+            <button class="region-btn" data-region="冀">冀</button>
+            <button class="region-btn" data-region="其他地区">其他地区</button>
+        </div>
+
+        <!-- 图表区域 -->
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
